@@ -18,7 +18,7 @@ const Arena = ({ CharNFT, setCharNFT }) => {
       setBoss(transformCharNFT(bossTxn));
     };
     const fetchMultipleChars = async () => {
-      const charsTxn = await gameContract.getAllPlayers();
+      const charsTxn = await gameContract.getAllPlayer();
       console.log("AllPlayers:", charsTxn);
       setMpChar(charsTxn.map((char) => transformCharNFT(char)));
     };
@@ -91,7 +91,7 @@ const Arena = ({ CharNFT, setCharNFT }) => {
       )}
       {/* Replace the Boss UI */}
       {boss && (
-        <div className="class-container">
+        <div className="boss-container">
           <div className={`boss-content ${attackState}`}>
             <h2> 🔥{boss.name}🔥</h2>
             <div className="image-content">

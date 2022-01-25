@@ -157,14 +157,14 @@
 }
 
 /* Effects */
-.boss-container .attacking {
+.boss-container .ATTACKING {
   animation: shake 1.2s cubic-bezier(0.36, 0.07, 0.19, 0.97) both infinite;
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
   perspective: 1000px;
 }
 
-.boss-container .hit {
+.boss-container .HIT {
   animation: hit-bounce 1s ease;
 }
 
@@ -238,4 +238,24 @@
   height: 90px;
   overflow: hidden;
   white-space: nowrap;
+}
+
+.boss-container .loading-indicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 25px;
+}
+
+.boss-container .loading-indicator p {
+  font-weight: bold;
+  font-size: 28px;
+}
+
+.multiplayer-container {
+  display: flex;
+  flex-direction: row;
+}
+.multiplayer-container img {
+  max-height: 100px;
 }
