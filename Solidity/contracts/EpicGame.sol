@@ -215,4 +215,12 @@ contract EpicGame is ERC721 {
 	function getBigBoss() public view returns (BigBoss memory) {
 		return bigBoss;
 	}
+
+	function getAllPlayer() public view returns (CharAttributes[] memory ) {
+		CharAttributes[] memory ret = new CharAttributes[](_tokenIds.current());
+		for (uint i = 0; i < _tokenIds.current(); i++) {
+			ret[i] = NFTHolderAttributes[i];
+		}
+		return ret;
+	}
 }

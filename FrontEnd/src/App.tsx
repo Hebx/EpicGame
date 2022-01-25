@@ -4,6 +4,7 @@ import { useGame } from "./hooks/useGame";
 import { useWallet } from "./hooks/useWallet";
 import LoadingIndicator from "./Components/LoadingIndicator";
 import "./App.css";
+import Arena from "./Components/Arena/Arena";
 
 declare global {
   interface Window {
@@ -59,6 +60,8 @@ const App = () => {
     // If user has connected to your app AND does not have a Char NFT - Show SelectChar Component
     else if (currentUser && !charNFT) {
       return <SelectChar setCharNFT={setCharNFT} />;
+    } else if (currentUser && charNFT) {
+      return <Arena CharNFT={charNFT} setCharNFT={setCharNFT} />;
     }
   };
 
